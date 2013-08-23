@@ -58,6 +58,9 @@
             <LinkID Range="1018,5">23</LinkID>
             <LinkID Range="1023,24">24</LinkID>
             <LinkID Range="1048,4">24</LinkID>
+            <LinkID Range="1053,16">40</LinkID>
+            <LinkID Range="1070,7">41</LinkID>
+            <LinkID Range="1078,4">41</LinkID>
         </TextLinks>
     </ScrivenerLinks>
 </Links>

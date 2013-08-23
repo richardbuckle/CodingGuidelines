@@ -34,7 +34,10 @@ Follow the standard for Git commit messages	&lt;$p>
 Cite ticket numbers in commit messages	&lt;$p>
 Use submodules for 3rd-party code	&lt;$p>
 Don't commit commented-out code	&lt;$p>
-Don't sign your comments	&lt;$p></Text>
+Don't sign your comments	&lt;$p>
+Document History
+History	&lt;$p>
+</Text>
         </Document>
         <Document ID="12">
             <Title>Careful with NSAssert in blocks</Title>
@@ -211,6 +214,9 @@ The usual Objective-C convention of prefixing reusable classes, and class extens
         <Document ID="14">
             <Title>Code architecture and design</Title>
         </Document>
+        <Document ID="7">
+            <Title>Compiler and build settings</Title>
+        </Document>
         <Document ID="23">
             <Title>Don't commit commented-out code</Title>
             <Text>Don't commit commented-out code
@@ -226,8 +232,8 @@ If you have code that is needed periodically e.g. for testing or benchmarking, d
 
 </Text>
         </Document>
-        <Document ID="7">
-            <Title>Compiler and build settings</Title>
+        <Document ID="40">
+            <Title>Document History</Title>
         </Document>
         <Document ID="32">
             <Title>No uninitialised locals, ever</Title>
@@ -295,19 +301,6 @@ None.
 
 </Text>
         </Document>
-        <Document ID="33">
-            <Title>Objective-C best practices</Title>
-        </Document>
-        <Document ID="16">
-            <Title>Learn the "SOLID" principles</Title>
-            <Text>Learn the "SOLID" principles
-
-Guideline:
-Learn and apply the “SOLID” design principles.
-
-That is all.
-</Text>
-        </Document>
         <Document ID="9">
             <Title>DLog not NSLog</Title>
             <Text>DLog not NSLog
@@ -330,6 +323,25 @@ There are a very few cases where we would want to log in release builds. If you 
 For flat-out programmer errors, use ALog() and ZAssert() judiciously.
 
 </Text>
+        </Document>
+        <Document ID="33">
+            <Title>Objective-C best practices</Title>
+        </Document>
+        <Document ID="16">
+            <Title>Learn the "SOLID" principles</Title>
+            <Text>Learn the "SOLID" principles
+
+Guideline:
+Learn and apply the “SOLID” design principles.
+
+That is all.
+</Text>
+        </Document>
+        <Document ID="41">
+            <Title>History</Title>
+            <Text>Document History
+
+Initial GitHub upload, 2012-08-23.</Text>
         </Document>
         <Document ID="25">
             <Title>General best practices</Title>
@@ -592,7 +604,7 @@ None. Such code is flat wrong.
         </Document>
         <Document ID="38">
             <Title>Introduction</Title>
-            <Text>These are my coding guidelines as they currently stand.
+            <Text>These are my coding guidelines as they currently stand. The source Scrivener document is available at https://github.com/richardbuckle/CodingGuidelines.
 
 Points to note:
 	1.	They are coding guidelines, not layout guidelines. If you are still obsessing about where braces should be placed, spaces vs tabs, etc, then I humbly submit that it's time to let go of all that. Professional coders can quickly adapt to any sane layout style if it's used consistently.
@@ -602,6 +614,29 @@ Points to note:
 Richard Buckle.
 Sailmaker Systems Ltd.
 London, 22 August 2013.
+</Text>
+        </Document>
+        <Document ID="39">
+            <Title>Guidline</Title>
+            <Text>Don’t fritz the brotxernaber
+
+Guideline:
+High-level description of the issue…
+
+Bad:
+Some code that is bad…
+	badcode();
+
+Good:
+Preferred code…
+	goodcode();
+
+Rationale:
+Fritzing the brotxernaber is bad because…
+
+Permitted Exceptions:
+text…
+
 </Text>
         </Document>
         <Document ID="10">
