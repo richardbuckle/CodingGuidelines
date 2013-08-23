@@ -4,7 +4,7 @@ This is a living document describing my Objective-C coding guidelines. I hope it
 
 MIT licence.
 
-Comments and pull requests are welcomed, and you are welcome to fork if for your own purposes, in which case attribution is welcomed but not required.
+Comments and pull requests are welcomed, and you are welcome to fork it for your own purposes, in which case attribution is welcomed but not required.
 
 Richard Buckle.  
 Sailmaker Systems Ltd.  
