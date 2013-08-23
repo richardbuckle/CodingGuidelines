@@ -1,0 +1,30 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf390
+{\fonttbl\f0\fswiss\fcharset0 Optima-Regular;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0\b\fs32 \cf0 Use submodules for 3rd-party code\
+\
+
+\fs28 Guideline:
+\fs32 \
+
+\b0\fs24 3
+\fs16 \super rd
+\fs24 \nosupersub -party code should be maintained in a Git repo of its own and a defined tag should be pulled into the working project as a Git submodule.\
+\
+
+\b\fs28 Rationale:
+\fs32 \
+
+\b0\fs24 This allows us to track revisions of the 3
+\fs16 \super rd
+\fs24 \nosupersub -party code, integrate any fixes that we've made in any branches of our own, all without disturbing production code. Once integration testing is complete, we can then point the production code to a new tag on the submodule.\
+\
+
+\b\fs28 Permitted Exceptions:
+\fs32 \
+
+\b0\fs24 Legacy projects that are no longer in development.\
+\
+}

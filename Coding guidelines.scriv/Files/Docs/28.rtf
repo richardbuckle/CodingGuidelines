@@ -1,0 +1,55 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf390
+{\fonttbl\f0\fswiss\fcharset0 Optima-Regular;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0\b\fs32 \cf0 Always get the screen size at runtime\
+\
+
+\fs28 Guideline:
+\fs32 \
+
+\b0\fs24 Always get the screen size at runtime. Never hardwire it.\
+\
+
+\b\fs28 Bad:
+\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f1\b0\fs24 \cf0 	myView.size.width = 1024 - 42 - (4 + 4);\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0 \cf0 \
+
+\b\fs28 Dubious:
+\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f1\b0\fs24 \cf0 	CGSize screenSize = [[UIScreen mainScreen] bounds].size;\
+	// who said we're on the main screen?\
+	myView.size.width = screenSize.width - kReservedWidth - (kLeftPadding + kRightPadding);\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0 \cf0 \
+
+\b\fs28 Best:
+\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f1\b0\fs24 \cf0 	
+\f0 Use AutoLayout. \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\b\fs28 \cf0 Rationale:
+\fs32 \
+
+\b0\fs24 Hard-coding a fixed screen size hurts portability between iPhone and iPad, and doesn't cater for new hardware and Apple TV.\
+\
+
+\b\fs28 Permitted Exceptions:
+\fs32 \
+
+\b0\fs24 None.\
+\
+}

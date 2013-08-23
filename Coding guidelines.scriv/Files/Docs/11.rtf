@@ -1,0 +1,51 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf390
+{\fonttbl\f0\fswiss\fcharset0 Optima-Regular;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0\b\fs32 \cf0 No meaningful code in NSAssert\
+\
+
+\fs28 Guideline:
+\fs32 \
+
+\b0\fs24 Do not put code that has side-effects in 
+\f1 NSAssert
+\f0  and family, as it will be compiled away in release builds.\
+\
+
+\b\fs28 Bad:
+\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f1\b0\fs24 \cf0 	NSAssert([self someMethod], @\'93someMethod failed\'94);\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0 \cf0 \
+
+\b\fs28 Good:
+\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f1\b0\fs24 \cf0 	BOOL success = [self someMethod];\
+	NSAssert(success, @\'93someMethod failed\'94);\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0 \cf0 \
+
+\b\fs28 Rationale:
+\fs32 \
+
+\b0\fs24 Even if 
+\f1 [self someMethod] 
+\f0 looks benign today, the bad code introduces a subtle divergence in behaviour between debug and release builds that can bite us later should 
+\f1 [self someMethod]
+\f0  be revised to have side effects.\
+\
+
+\b\fs28 Permitted Exceptions:
+\fs32 \
+
+\b0\fs24 None.\
+\
+}

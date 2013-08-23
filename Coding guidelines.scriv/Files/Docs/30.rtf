@@ -1,0 +1,75 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf390
+{\fonttbl\f0\fswiss\fcharset0 Optima-Regular;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0\b\fs32 \cf0 Minimise preprocessor usage\
+\
+
+\fs28 Guideline:
+\fs32 \
+
+\b0\fs24 Minimise preprocessor usage. Prefer 
+\f1 const
+\f0  and 
+\f1 inline
+\f0  to 
+\f1 #define
+\f0 .\
+\
+
+\b\fs28 Bad:
+\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f1\b0\fs24 \cf0 	
+\f0 In the header:
+\f1 \
+	#define kLookupKey @"blah"\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0 \cf0 \
+
+\b\fs28 Good:
+\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f1\b0\fs24 \cf0 	
+\f0 In the header:
+\f1 \
+	extern NSString *const kLookupKey;\
+\
+	
+\f0 In the implementation:
+\f1 \
+	NSString *const kLookupKey = @"blah";\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0\b\fs28 \cf0 Rationale:
+\fs32 \
+
+\b0\fs24 The C preprocessor is arguably the purest manifestation of programming evil imaginable. It smashes through all scoping rules and encapsulation defences. Worst of all, there is little or no defence against a preprocessor macro in a header that you are forced to include.\
+\
+Putting a preprocessor macro in a header that clients of your code need to 
+\f1 #import
+\f0  is one of the rudest things you can do. We tolerate it from the platform vendors, but it is not an example that should be followed.\
+\
+
+\b\fs28 Solution:
+\fs32 \
+
+\b0\fs24 Use 
+\f1 extern const
+\f0  definitions in the header as shown above.\
+Also, by defining the value only in the implementation file, we have eliminated a dependency. Should we need to change 
+\f1 kLookupKey
+\f0 , only the implementation file need be recompiled.\
+For functions, define inline functions rather than macros.\
+\
+
+\b\fs28 Permitted Exceptions:
+\fs32 \
+
+\b0\fs24 Macros in header files are banned, no exceptions.\
+Judicious use of #define WANT_FOO_LOGGING in implementation files to control logging via #if WANT_FOO_LOGGING blocks is acceptable if it doesn't get out of hand.}

@@ -1,0 +1,542 @@
+<html>
+
+<head>
+<title>Coding standards</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+	body {background-color: #bac0c7}
+    p.binderItem {margin: 10.0px 0.0px 0.0px 05.0px; font-family:Cochin, Times, Courier, Arial, serif; font-size:14.0px;}
+    .page {border: 1px solid #727272; background: #fff}
+    hr {
+      border-top: 1px dashed #000;
+      border-bottom: 0px solid #fff;
+      color: #fff;
+      background-color: #fff;
+      height: 0px;
+  </style>
+</head>
+
+<body>
+
+<table border="0" width="100%" cellspacing="3">
+<tr>
+<td>
+
+<table class="page" width="100%" cellspacing="10" cellpadding="2">
+<tr>
+<td valign="top">
+
+<ul>
+<li>
+<p class="binderItem"><strong>Introduction</strong><br/>These are my coding guidelines as they currently stand.<br/>
+<br/>
+Points to note:<br/>
+ 1. They are coding guidelines, not layout guidelines. If you are still obsessing about where braces should be placed, spaces vs tabs, etc, then I humbly submit that it's time to let go of all that. Professional coders can quickly adapt to any sane layout style if it's used consistently.<br/>
+ 2. These are guidelines, not tram-lines. Sometimes it's OK to deviate from them, but the mantra that “only one who has fully understood t...</p>
+</li>
+<li>
+<p class="binderItem"><strong>Contents</strong><br/>Contents<br/>
+Compiler and build settings<br/>
+Zero warnings and static analyser issues always <$p><br/>
+Use the standard TODO: comment <$p><br/>
+Logging and assertions<br/>
+DLog not NSLog <$p><br/>
+Minimise use of logging <$p><br/>
+No meaningful code in NSAssert <$p><br/>
+Careful with NSAssert in blocks <$p><br/>
+Code architecture and design<br/>
+Don't repeat yourself <$p><br/>
+Learn the "SOLID" principles <$p><br/>
+Be judicious about singletons <$p><br/>
+Minimise header dependencies <$p><br/>
+General best practices<br/>
+Use string resources <$p><br/>
+No magic numbers <$p>...</p>
+</li>
+<li>
+<p class="binderItem"><strong>Compiler and build settings</strong></p>
+</li>
+<hr/>
+<ul>
+<li>
+<p class="binderItem"><strong>Zero warnings and static analyser issues always</strong><br/>Zero warnings and static analyser issues always<br/>
+<br/>
+Guideline:<br/>
+Code submitted for review or integration must always compile cleanly with zero warnings and zero static analyser issues. Warnings must be investigated and resolved properly, not merely suppressed.<br/>
+<br/>
+Rationale:<br/>
+A zero-tolerance policy for compiler warnings is the only way to ensure that potentially serious warnings receive the attention that they need.<br/>
+<br/>
+Sometimes a warning will flag a more insidious problem than the warning's message may ...</p>
+</li>
+<li>
+<p class="binderItem"><strong>Use the standard TODO: comment</strong><br/>Use the standard TODO: comment<br/>
+<br/>
+Guideline:<br/>
+Use the standard TODO: comment, not variations such as FIXME, todo , XXX etc, and explain clearly what needs to be done.<br/>
+<br/>
+Bad:<br/>
+ foo(); // FIXME clean this up<br/>
+<br/>
+Preferred:<br/>
+ foo(); // TODO: a clear explanation follows here<br/>
+<br/>
+Rationale:<br/>
+The TODO: comment is recognized by Xcode and displayed prominently in the jump-bar’s dropdown menu.<br/>
+<br/>
+Permitted Exceptions:<br/>
+None. </p>
+</li>
+</ul>
+<hr/>
+<li>
+<p class="binderItem"><strong>Logging and assertions</strong></p>
+</li>
+<hr/>
+<ul>
+<li>
+<p class="binderItem"><strong>DLog not NSLog</strong><br/>DLog not NSLog<br/>
+<br/>
+Guideline:<br/>
+We should nearly always prefer the DLog() macro from Marcus Zarra, Lumberjack, or the ECLogging module to NSLog(), so that we do not log unnecessarily in release builds.<br/>
+<br/>
+Bad:<br/>
+ NSLog(@“someDict is @”, someDict);<br/>
+<br/>
+Preferred:<br/>
+ DLog(@“someDict is @”, someDict);<br/>
+<br/>
+Rationale:<br/>
+Logging in release builds is very rarely of any value since we have very little access to logs on customers’ devices. Additionally, logging incurs a significant speed hit in instantiating an NSCalendar ...</p>
+</li>
+<li>
+<p class="binderItem"><strong>Minimise use of logging</strong><br/>Minimise use of logging<br/>
+<br/>
+Guideline:<br/>
+Don’t spam the log. Don't log success (what did you expect: a medal or something?). If your logging is to diagnose a particular ticket, delete it when you’re done (and, ideally, when you have written a unit test for the ticket).<br/>
+<br/>
+Rationale:<br/>
+Spamming the log console with unnecessary logging is rude to your colleagues because it makes it harder for them to see their own log messages when they are diagnosing something.<br/>
+<br/>
+Permitted Exceptions:<br/>
+If you have some logg...</p>
+</li>
+<li>
+<p class="binderItem"><strong>No meaningful code in NSAssert</strong><br/>No meaningful code in NSAssert<br/>
+<br/>
+Guideline:<br/>
+Do not put code that has side-effects in NSAssert and family, as it will be compiled away in release builds.<br/>
+<br/>
+Bad:<br/>
+ NSAssert([self someMethod], @“someMethod failed”);<br/>
+<br/>
+Good:<br/>
+ BOOL success = [self someMethod];<br/>
+ NSAssert(success, @“someMethod failed”);<br/>
+<br/>
+Rationale:<br/>
+Even if [self someMethod] looks benign today, the bad code introduces a subtle divergence in behaviour between debug and release builds that can bite us later should [self someMethod] be revised...</p>
+</li>
+<li>
+<p class="binderItem"><strong>Careful with NSAssert in blocks</strong><br/>Careful with NSAssert in blocks<br/>
+<br/>
+Guideline:<br/>
+Be aware that NSAssert references self. If used in a block that is retained by self, a retain cycle and thus a memory leak will occur.<br/>
+<br/>
+Bad:<br/>
+ self.completionBlock = ^(BOOL success) {<br/>
+  NSAssert(success, @“failed”);<br/>
+ };<br/>
+<br/>
+Good:<br/>
+ self.completionBlock = ^(BOOL success) {<br/>
+  if(!success) {<br/>
+   // DLog(@“failed”);<br/>
+   // Now handle it properly<br/>
+  }<br/>
+ };<br/>
+<br/>
+Rationale:<br/>
+A fuller description and an alternative macro that doesn’t reference self can be found here. Howeve...</p>
+</li>
+</ul>
+<hr/>
+<li>
+<p class="binderItem"><strong>Code architecture and design</strong></p>
+</li>
+<hr/>
+<ul>
+<li>
+<p class="binderItem"><strong>Don't repeat yourself</strong><br/>Don’t repeat yourself<br/>
+<br/>
+Guideline:<br/>
+Don’t copy-and paste code. Instead refactor that code. Particularly, don’t copy and paste and then change just a few things here and there. Instead, parameterise and refactor.<br/>
+<br/>
+Rationale:<br/>
+See the wikipedia article.<br/>
+Repeated code is IMHO the most pernicious kind of technical debt. It is a massive maintenance risk because maintenance programmers will not be aware that if they find a bug, it will need to be fixed in multiple unrelated places of which they probably ...</p>
+</li>
+<li>
+<p class="binderItem"><strong>Learn the "SOLID" principles</strong><br/>Learn the "SOLID" principles<br/>
+<br/>
+Guideline:<br/>
+Learn and apply the “SOLID” design principles.<br/>
+<br/>
+That is all.</p>
+</li>
+<li>
+<p class="binderItem"><strong>Be judicious about singletons</strong><br/>Be judicious about singletons<br/>
+<br/>
+Guideline:<br/>
+Think very carefully before using the singleton design pattern. Prefer dependency injection.<br/>
+<br/>
+Bad:<br/>
+ - (void)someMethod {<br/>
+     FooManager *fooManager = [FooManager sharedInstance];<br/>
+     // do something with fooManager ...<br/>
+<br/>
+Good:<br/>
+ - (void)someMethodWithFooManager:(FooManager *)fooManager {<br/>
+   // do something with fooManager ...<br/>
+<br/>
+Rationale:<br/>
+The singleton design pattern is often more of an anti-pattern. Singletons are just globals in disguise. They introduce...</p>
+</li>
+<li>
+<p class="binderItem"><strong>Minimise header dependencies</strong><br/>Minimise header dependencies<br/>
+<br/>
+Guideline:<br/>
+Strive to minimise header dependencies. Use forward declarations where possible.<br/>
+<br/>
+Bad:<br/>
+ #import "Foo.h";<br/>
+<br/>
+ @interface Qux : NSObject {<br/>
+ Foo *foo;<br/>
+ // …<br/>
+ <br/>
+<br/>
+Good:<br/>
+ @class Foo;<br/>
+<br/>
+ @interface Qux : NSObject {<br/>
+ Foo *foo;<br/>
+ // …<br/>
+<br/>
+Rationale:<br/>
+Unnecessary header dependencies not only increase compile time unnecessarily, they increase code coupling because you are forcing these unnecessary dependencies on all users of your class.<br/>
+<br/>
+As a rule, you only need to import h...</p>
+</li>
+</ul>
+<hr/>
+<li>
+<p class="binderItem"><strong>General best practices</strong></p>
+</li>
+<hr/>
+<ul>
+<li>
+<p class="binderItem"><strong>Use string resources</strong><br/>Use string resources<br/>
+<br/>
+Guideline:<br/>
+All strings visible in the UI should be in string resources, not string literals in code. Use informal structured naming for the key, not the default English text.<br/>
+<br/>
+Bad:<br/>
+ label.text = @"Congratulations!";<br/>
+<br/>
+Still not ideal:<br/>
+ label.text = NSLocalizedString(@"Congratulations!", nil);<br/>
+<br/>
+Best:<br/>
+ label.text = NSLocalizedString(@"labels.text.congratulations", nil);<br/>
+<br/>
+Rationale:<br/>
+It is a horrible job to have to go through the entire code base looking for string literals that...</p>
+</li>
+<li>
+<p class="binderItem"><strong>No magic numbers</strong><br/>No magic numbers<br/>
+<br/>
+Guideline:<br/>
+Use named constants instead of magic numbers.<br/>
+<br/>
+Bad:<br/>
+ myView.size.width = 1024 - 42 - (4 + 4);<br/>
+<br/>
+Better:<br/>
+ CGSize containerSize = containerView.frame.size;<br/>
+ myView.size.width = containerSize.width <br/>
+        - kReservedWidth - (kLeftPadding + kRightPadding);<br/>
+<br/>
+Best:<br/>
+ Use AutoLayout. <br/>
+<br/>
+Rationale:<br/>
+One of the ultimate maintenance programming headaches. Six months later, no-one will have the faintest idea what the magic numbers mean.<br/>
+<br/>
+Permitted Exceptions:<br/>
+Dividing by 2 to get...</p>
+</li>
+<li>
+<p class="binderItem"><strong>Always get the screen size at runtime</strong><br/>Always get the screen size at runtime<br/>
+<br/>
+Guideline:<br/>
+Always get the screen size at runtime. Never hardwire it.<br/>
+<br/>
+Bad:<br/>
+ myView.size.width = 1024 - 42 - (4 + 4);<br/>
+<br/>
+Dubious:<br/>
+ CGSize screenSize = [[UIScreen mainScreen] bounds].size;<br/>
+ // who said we're on the main screen?<br/>
+ myView.size.width = screenSize.width - kReservedWidth - (kLeftPadding + kRightPadding);<br/>
+<br/>
+Best:<br/>
+ Use AutoLayout. <br/>
+<br/>
+Rationale:<br/>
+Hard-coding a fixed screen size hurts portability between iPhone and iPad, and doesn't cater for new hardware a...</p>
+</li>
+<li>
+<p class="binderItem"><strong>Never compare against YES etc</strong><br/>Never compare against YES etc<br/>
+<br/>
+Guideline:<br/>
+Never compare boolean expressions against YES, true, 1, etc.<br/>
+<br/>
+Bad:<br/>
+ if(foo == YES) {<br/>
+  // ...<br/>
+ }<br/>
+<br/>
+Good:<br/>
+ if(foo != NO) {<br/>
+  // ...<br/>
+ }<br/>
+<br/>
+Best:<br/>
+ if(foo) {<br/>
+  // ...<br/>
+ }<br/>
+<br/>
+Rationale:<br/>
+All non-zero values represent truth. Comparison against YES, true, etc will give incorrect results when the value being compared is any other non-zero value.<br/>
+<br/>
+Permitted Exceptions:<br/>
+None. Such code is flat wrong.<br/>
+</p>
+</li>
+<li>
+<p class="binderItem"><strong>Minimise preprocessor usage</strong><br/>Minimise preprocessor usage<br/>
+<br/>
+Guideline:<br/>
+Minimise preprocessor usage. Prefer const and inline to #define.<br/>
+<br/>
+Bad:<br/>
+ In the header:<br/>
+ #define kLookupKey @"blah"<br/>
+<br/>
+Good:<br/>
+ In the header:<br/>
+ extern NSString *const kLookupKey;<br/>
+<br/>
+ In the implementation:<br/>
+ NSString *const kLookupKey = @"blah";<br/>
+<br/>
+Rationale:<br/>
+The C preprocessor is arguably the purest manifestation of programming evil imaginable. It smashes through all scoping rules and encapsulation defences. Worst of all, there is little or no defence against a pre...</p>
+</li>
+<li>
+<p class="binderItem"><strong>No Hungarian naming</strong><br/>No Hungarian naming<br/>
+<br/>
+Guideline:<br/>
+Do not use hungarian naming to encode the type of a variable or whether it is an objective-C property or instance variable in its name.<br/>
+<br/>
+Rationale:<br/>
+Quite apart from the unnecessary cognitive burden it adds to reading code, and the bad fit with a dynamically-typed language, to quote "How to Write Unmaintanable Code":<br/>
+Hungarian Notation is the tactical nuclear weapon of source code obfuscation techniques... Due to the sheer volume of source code contaminated by this...</p>
+</li>
+<li>
+<p class="binderItem"><strong>No uninitialised locals, ever</strong><br/>No uninitialised locals, ever<br/>
+<br/>
+Guideline:<br/>
+Local variables should always be initialised to a safe value at the point of declaration, and should not be declared until they are needed.<br/>
+<br/>
+Bad:<br/>
+ CGRect rect;<br/>
+ switch(something) {<br/>
+  // some code that doesn't cover all values<br/>
+ }<br/>
+<br/>
+Good:<br/>
+ CGRect rect = CGRectNull;<br/>
+ switch(something) {<br/>
+  // some code that doesn't cover all values<br/>
+ }<br/>
+<br/>
+Rationale:<br/>
+If not initialised, local variables get garbage values. This is never good.<br/>
+<br/>
+Permitted Exceptions:<br/>
+Under ARC, Coco...</p>
+</li>
+</ul>
+<hr/>
+<li>
+<p class="binderItem"><strong>Objective-C best practices</strong></p>
+</li>
+<hr/>
+<ul>
+<li>
+<p class="binderItem"><strong>Dot notation is for genuine properties only</strong><br/>Dot notation is for genuine properties only<br/>
+<br/>
+Guideline:<br/>
+Dot notation is only for getting and setting properties. Do not abuse it to call methods that are not property getters or setters.<br/>
+<br/>
+Bad:<br/>
+ UIView *view = …;<br/>
+ view.sizeToFit; // WRONG, not a property<br/>
+<br/>
+Good:<br/>
+ UIView *view = …;<br/>
+ [view sizeToFit];<br/>
+ CGRect frame = view.frame;<br/>
+<br/>
+Rationale:<br/>
+Abusing dot notation to call non-property methods is not supported and may well break in future. Regardless, it is highly misleading to maintenance programmers.<br/>
+...</p>
+</li>
+<li>
+<p class="binderItem"><strong>Avoid mutable container properties</strong><br/>Avoid mutable container properties<br/>
+<br/>
+Guideline:<br/>
+Avoid mutable container properties.<br/>
+<br/>
+Bad:<br/>
+ @interface Foo {<br/>
+ @property (readwrite, retain) NSMutableArray *someArray;<br/>
+<br/>
+Good:<br/>
+ @interface Foo {<br/>
+ @property (readwrite, retain) NSArray *someArray;<br/>
+<br/>
+Rationale:<br/>
+Mutable container properties allow the contents of the property to be modified without the owning object's knowledge. This severely violates encapsulation, and breaks fundamental Cocoa technologies such as key-value-observing.<br/>
+<br/>
+Because Cocoa conta...</p>
+</li>
+<li>
+<p class="binderItem"><strong>Beware of retain cycles with blocks and self</strong><br/>Beware of retain cycles with blocks and self<br/>
+<br/>
+Guideline:<br/>
+If self retains a block that references self, a retain cycle and a memory leak will occur.<br/>
+<br/>
+Bad:<br/>
+ self.completionBlock = ^() {<br/>
+  [self someMethod];<br/>
+ };<br/>
+<br/>
+Good:<br/>
+Without ARC…<br/>
+ __block id weakSelf = self; <br/>
+ self.completionBlock = ^() {<br/>
+  [weakSelf someMethod];<br/>
+ };<br/>
+With ARC…<br/>
+ __weak id weakSelf = self; <br/>
+ self.completionBlock = ^() {<br/>
+  [weakSelf someMethod];<br/>
+ };<br/>
+<br/>
+Rationale:<br/>
+Obviously the retain cycle is bad news and needs to be avoided.<br/>
+<br/>
+Permitt...</p>
+</li>
+</ul>
+<hr/>
+<li>
+<p class="binderItem"><strong>Version control</strong></p>
+</li>
+<hr/>
+<ul>
+<li>
+<p class="binderItem"><strong>Follow the standard for Git commit messages</strong><br/>Follow the standard for Git commit messages<br/>
+<br/>
+Guideline:<br/>
+To fit well with the various tools, Git commit messages should have an initial, brief, summary line followed by any necessary detail on subsequent lines.<br/>
+<br/>
+Bad:<br/>
+[a ton of text all on one line]<br/>
+<br/>
+Good:<br/>
+Fix ticket #345<br/>
+The issue turned out to be […]. <br/>
+The fix was to […]. <br/>
+Unit test […] has been added to guard against regressions.<br/>
+<br/>
+Rationale:<br/>
+All the various tools for viewing Git logs work best if the initial summary line is relatively short, pr...</p>
+</li>
+<li>
+<p class="binderItem"><strong>Cite ticket numbers in commit messages</strong><br/>Cite ticket numbers in commit messages<br/>
+<br/>
+Guideline:<br/>
+If your commit is related to any ticket numbers (for bugs or work units), cite those numbers in your Git commit message.<br/>
+<br/>
+Rationale:<br/>
+This permits two-way linking between commits (aka changesets) and tickets. It is particularly useful for maintenance programmers to use git blame to find the changeset for a given line of code and thus tell what ticket motivated it.<br/>
+<br/>
+Permitted Exceptions:<br/>
+Sometimes, especially during bring-up, commits will be gener...</p>
+</li>
+<li>
+<p class="binderItem"><strong>Use submodules for 3rd-party code</strong><br/>Use submodules for 3rd-party code<br/>
+<br/>
+Guideline:<br/>
+3rd-party code should be maintained in a Git repo of its own and a defined tag should be pulled into the working project as a Git submodule.<br/>
+<br/>
+Rationale:<br/>
+This allows us to track revisions of the 3rd-party code, integrate any fixes that we've made in any branches of our own, all without disturbing production code. Once integration testing is complete, we can then point the production code to a new tag on the submodule.<br/>
+<br/>
+Permitted Exceptions:<br/>
+Legacy pro...</p>
+</li>
+<li>
+<p class="binderItem"><strong>Don't commit commented-out code</strong><br/>Don't commit commented-out code<br/>
+<br/>
+Guideline:<br/>
+Keep a clean code base without any dead wood. Before you commit, delete any commented-out code.<br/>
+<br/>
+Rationale:<br/>
+We have version control to get back the old code if we need it. Commented-out code wastes everyone's time by forcing every maintenance programmer who encounters it to try to figure out why it was commented out and whether it needs to be kept.<br/>
+<br/>
+Permitted Exceptions:<br/>
+If you have code that is needed periodically e.g. for testing or benchmarking, dis...</p>
+</li>
+<li>
+<p class="binderItem"><strong>Don't sign your comments</strong><br/>Don't sign your comments<br/>
+<br/>
+Guideline:<br/>
+The old school convention of signing your comments with your initials and a timestamp are redundant in the age of version control. Write good version control comments instead.<br/>
+<br/>
+Rationale:<br/>
+Don't add redundant cognitive burden to the codebase. If I need to see who wrote it, when and why, I'll look in version control.<br/>
+<br/>
+Permitted Exceptions:<br/>
+None.<br/>
+</p>
+</li>
+</ul>
+</ul>
+
+</td>
+<td width="8">
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>

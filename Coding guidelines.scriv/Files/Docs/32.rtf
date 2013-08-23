@@ -1,0 +1,51 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf390
+{\fonttbl\f0\fswiss\fcharset0 Optima-Regular;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0\b\fs32 \cf0 No uninitialised locals, ever\
+\
+
+\fs28 Guideline:
+\fs32 \
+
+\b0\fs24 Local variables should always be initialised to a safe value at the point of declaration, and should not be declared until they are needed.\
+\
+
+\b\fs28 Bad:
+\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f1\b0\fs24 \cf0 	CGRect rect;\
+	switch(something) \{\
+		// some code that doesn't cover all values\
+	\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0 \cf0 \
+
+\b\fs28 Good:
+\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f1\b0\fs24 \cf0 	CGRect rect = CGRectNull;\
+	switch(something) \{\
+		// some code that doesn't cover all values\
+	\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0 \cf0 \
+
+\b\fs28 Rationale:
+\fs32 \
+
+\b0\fs24 If not initialised, local variables get garbage values. This is never good.\
+\
+
+\b\fs28 Permitted Exceptions:
+\fs32 \
+
+\b0\fs24 Under ARC, Cocoa objects are always initialized to nil, so they get a free pass.\
+Objective-C properties and instance variables are also guaranteed to be zeroed out.\
+\
+}

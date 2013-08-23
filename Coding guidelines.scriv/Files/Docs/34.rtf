@@ -1,0 +1,52 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf390
+{\fonttbl\f0\fswiss\fcharset0 Optima-Regular;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0\b\fs32 \cf0 Dot notation is for genuine properties only\
+\
+
+\fs28 Guideline:
+\fs32 \
+
+\b0\fs24 Dot notation is only for getting and setting properties. Do not abuse it to call methods that are not property getters or setters.\
+\
+
+\b\fs28 Bad:
+\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f1\b0\fs24 \cf0 	UIView *view = \'85;\
+	view.sizeToFit; // WRONG, not a property\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0 \cf0 \
+
+\b\fs28 Good:
+\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f1\b0\fs24 \cf0 	UIView *view = \'85;\
+	[view sizeToFit];\
+	CGRect frame = view.frame;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0 \cf0 \
+
+\b\fs28 Rationale:
+\fs32 \
+
+\b0\fs24 Abusing dot notation to call non-property methods is not supported and may well break in future. Regardless, it is highly misleading to maintenance programmers.\
+\
+
+\b\fs28 Permitted Exceptions:
+\fs32 \
+
+\b0\fs24 None.\
+\
+
+\b\fs28 Commentary:
+\fs32 \
+
+\b0\fs24 Yes, Apple engineers have been seen breaking this rule in WWDC vids. No, that does not mean that it'll get past my code review.\
+}

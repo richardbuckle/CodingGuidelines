@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ScrivenerProject Version="1.0" Creator="SCRMAC-2.4.1-22949" Modified="2013-08-23 21:44:45 +0100">
+    <Binder>
+        <BinderItem ID="0" Type="DraftFolder" Created="2012-01-19 03:31:59 +0000" Modified="2012-01-19 03:31:59 +0000">
+            <Title>Draft</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+            </MetaData>
+            <DefaultChildTemplateID>5</DefaultChildTemplateID>
+            <Children>
+                <BinderItem ID="38" Type="Text" Created="2013-08-22 02:31:14 +0100" Modified="2013-08-23 21:29:02 +0100">
+                    <Title>Introduction</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>760,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="3" Type="Text" Created="2012-01-19 03:31:59 +0000" Modified="2013-08-23 21:42:54 +0100">
+                    <Title>Contents</Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>879,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="7" Type="Folder" Created="2012-01-23 20:18:46 +0000" Modified="2013-08-03 01:28:14 +0100">
+                    <Title>Compiler and build settings</Title>
+                    <MetaData>
+                        <LabelID>1</LabelID>
+                        <StatusID>1</StatusID>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="6" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-22 03:34:42 +0100">
+                            <Title>Zero warnings and static analyser issues always</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>529,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="13" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-03 01:29:08 +0100">
+                            <Title>Use the standard TODO: comment</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>0,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="8" Type="Folder" Created="2012-01-23 20:19:14 +0000" Modified="2013-08-03 01:33:27 +0100">
+                    <Title>Logging and assertions</Title>
+                    <MetaData>
+                        <LabelID>1</LabelID>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="9" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-22 03:40:46 +0100">
+                            <Title>DLog not NSLog</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>4,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="10" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-22 02:55:56 +0100">
+                            <Title>Minimise use of logging</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>120,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="11" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-22 02:56:01 +0100">
+                            <Title>No meaningful code in NSAssert</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>0,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="12" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-23 00:07:40 +0100">
+                            <Title>Careful with NSAssert in blocks</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>61,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="14" Type="Folder" Created="2012-01-23 20:59:44 +0000" Modified="2013-08-03 01:33:36 +0100">
+                    <Title>Code architecture and design</Title>
+                    <MetaData>
+                        <LabelID>1</LabelID>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="15" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-23 00:08:10 +0100">
+                            <Title>Don't repeat yourself</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>665,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="16" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-22 03:35:49 +0100">
+                            <Title>Learn the "SOLID" principles</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>101,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="17" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-23 21:34:00 +0100">
+                            <Title>Be judicious about singletons</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>779,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="18" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-23 00:09:50 +0100">
+                            <Title>Minimise header dependencies</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>140,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="25" Type="Folder" Created="2012-01-23 22:10:27 +0000" Modified="2013-08-03 01:33:43 +0100">
+                    <Title>General best practices</Title>
+                    <MetaData>
+                        <LabelID>1</LabelID>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="26" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-23 00:10:32 +0100">
+                            <Title>Use string resources</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>306,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="27" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-23 21:35:12 +0100">
+                            <Title>No magic numbers</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>792,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="28" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-22 03:51:36 +0100">
+                            <Title>Always get the screen size at runtime</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>203,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="29" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-23 21:36:05 +0100">
+                            <Title>Never compare against YES etc</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>430,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="30" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-23 21:37:52 +0100">
+                            <Title>Minimise preprocessor usage</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>1085,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="31" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-23 21:38:48 +0100">
+                            <Title>No Hungarian naming</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>740,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="32" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-22 02:56:50 +0100">
+                            <Title>No uninitialised locals, ever</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>651,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="33" Type="Folder" Created="2012-01-23 22:58:52 +0000" Modified="2013-08-03 01:33:58 +0100">
+                    <Title>Objective-C best practices</Title>
+                    <MetaData>
+                        <LabelID>1</LabelID>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="34" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-02 23:49:42 +0100">
+                            <Title>Dot notation is for genuine properties only</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>670,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="36" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-22 04:02:18 +0100">
+                            <Title>Avoid mutable container properties</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>920,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="37" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-22 02:57:00 +0100">
+                            <Title>Beware of retain cycles with blocks and self</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>588,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="19" Type="Folder" Created="2012-01-23 21:40:07 +0000" Modified="2013-08-03 01:34:18 +0100">
+                    <Title>Version control</Title>
+                    <MetaData>
+                        <LabelID>1</LabelID>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="20" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-23 21:41:50 +0100">
+                            <Title>Follow the standard for Git commit messages</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>0,43</TextSelection>
+                            </TextSettings>
+                            <References>
+                                <Reference BinderID="3" Destination="[Internal Link]">Contents</Reference>
+                            </References>
+                        </BinderItem>
+                        <BinderItem ID="21" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-23 21:43:21 +0100">
+                            <Title>Cite ticket numbers in commit messages</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>604,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="22" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-22 02:57:10 +0100">
+                            <Title>Use submodules for 3rd-party code</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>542,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="23" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-23 21:44:11 +0100">
+                            <Title>Don't commit commented-out code</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>591,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="24" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-23 21:44:33 +0100">
+                            <Title>Don't sign your comments</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>383,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+        <BinderItem ID="1" Type="ResearchFolder" Created="2012-01-19 03:31:59 +0000" Modified="2012-01-19 03:31:59 +0000">
+            <Title>Research</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+            </MetaData>
+        </BinderItem>
+        <BinderItem ID="4" Type="Folder" Created="2012-01-19 03:33:59 +0000" Modified="2012-01-19 03:34:10 +0000">
+            <Title>Templates</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+                <NotesTextSelection>0,0</NotesTextSelection>
+            </MetaData>
+            <TextSettings>
+                <TextSelection>0,0</TextSelection>
+            </TextSettings>
+            <Children>
+                <BinderItem ID="5" Type="Text" Created="2012-01-19 03:34:24 +0000" Modified="2013-08-22 03:11:49 +0100">
+                    <Title>Guidline</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>103,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+        <BinderItem ID="2" Type="TrashFolder" Created="2012-01-19 03:31:59 +0000" Modified="2012-01-19 03:31:59 +0000">
+            <Title>Trash</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+            </MetaData>
+        </BinderItem>
+    </Binder>
+    <Collections>
+        <Collection Type="Binder" ID="7E3DDFB0-79B8-4C82-B554-086C7E414DA3" Color="0.784753 0.815752 0.848702">
+            <Title>Binder</Title>
+        </Collection>
+        <Collection Type="RecentSearch" ID="52664ED3-ED84-447E-B964-128CFEC1B346" Color="0.922 0.91 0.98">
+            <Title>Search Results</Title>
+        </Collection>
+    </Collections>
+    <LabelSettings>
+        <Title>Label</Title>
+        <DefaultLabelID>-1</DefaultLabelID>
+        <Labels>
+            <Label ID="-1">No Label</Label>
+            <Label ID="0" Color="0.9 0.92 0.95">Concept</Label>
+            <Label ID="1" Color="0.985 0.875 0.85">Chapter</Label>
+        </Labels>
+    </LabelSettings>
+    <StatusSettings>
+        <Title>Status</Title>
+        <DefaultStatusID>-1</DefaultStatusID>
+        <StatusItems>
+            <Status ID="-1">No Status</Status>
+            <Status ID="0">To Do</Status>
+            <Status ID="1">First Draft</Status>
+            <Status ID="2">Revised Draft</Status>
+            <Status ID="3">Final Draft</Status>
+            <Status ID="4">Done</Status>
+        </StatusItems>
+    </StatusSettings>
+    <ProjectProperties>
+        <ProjectTitle></ProjectTitle>
+        <AbbreviatedTitle></AbbreviatedTitle>
+        <FullName></FullName>
+        <LastName></LastName>
+        <FirstName></FirstName>
+    </ProjectProperties>
+    <ProjectTargets Notify="No">
+        <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2012-01-19 03:31:59 +0000" IgnoreDeadline="Yes">0</DraftTarget>
+        <SessionTarget Type="Words" CountDraftOnly="Yes" AllowNegatives="Yes" ResetType="Midnight" DeterminedFromDeadline="No" WritingDays="" CanWriteOnDeadlineDate="No">0</SessionTarget>
+        <PreviousSession Words="7" Characters="64" Date="2013-08-23 21:28:14 +0100"></PreviousSession>
+    </ProjectTargets>
+    <TemplateFolderID>4</TemplateFolderID>
+    <PrintSettings PaperSize="595.280029,841.890015" LeftMargin="72.0" RightMargin="72.0" TopMargin="90.0" BottomMargin="90.0" PaperType="iso-a4" Orientation="Portrait" HorizontalPagination="Clip" VerticalPagination="Auto" ScaleFactor="1.0" HorizontallyCentered="Yes" VerticallyCentered="Yes" Collates="Yes" PagesAcross="1" PagesDown="1"></PrintSettings>
+</ScrivenerProject>

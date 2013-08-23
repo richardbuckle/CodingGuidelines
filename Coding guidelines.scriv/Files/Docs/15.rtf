@@ -1,0 +1,33 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf390
+{\fonttbl\f0\fswiss\fcharset0 Optima-Regular;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0\b\fs32 \cf0 Don\'92t repeat yourself\
+\
+
+\fs28 Guideline:
+\fs32 \
+
+\b0\fs24 Don\'92t copy-and paste code. Instead refactor that code. Particularly, don\'92t copy and paste and then change just a few things here and there. Instead, parameterise and refactor.\
+\
+
+\b\fs28 Rationale:
+\fs32 \
+
+\b0\fs24 See the {\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Don't_repeat_yourself"}}{\fldrslt wikipedia article}}.\
+Repeated code is IMHO the most pernicious kind of technical debt. It is a massive maintenance risk because maintenance programmers will not be aware that if they find a bug, it will need to be fixed in multiple unrelated places of which they probably will not be aware. \
+\
+There is a good probability that said maintenance programmer will be future you, who has forgotten all the state that you currently have in your head at the time that you select and copy that code.\
+\
+Do the right thing by your client, future you, and any other future maintenance programmers and 
+\b DON'T REPEAT YOURSELF
+\b0 .\
+\
+
+\b\fs28 Permitted Exceptions:
+\fs32 \
+
+\b0\fs24 None.\
+\
+}

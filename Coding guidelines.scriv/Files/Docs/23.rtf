@@ -1,0 +1,28 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf390
+{\fonttbl\f0\fswiss\fcharset0 Optima-Regular;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0\b\fs32 \cf0 Don't commit commented-out code\
+\
+
+\fs28 Guideline:
+\fs32 \
+
+\b0\fs24 Keep a clean code base without any dead wood. Before you commit, delete any commented-out code.\
+\
+
+\b\fs28 Rationale:
+\fs32 \
+
+\b0\fs24 We have version control to get back the old code if we need it. Commented-out code wastes everyone's time by forcing every maintenance programmer who encounters it to try to figure out why it was commented out and whether it needs to be kept.\
+\
+
+\b\fs28 Permitted Exceptions:
+\fs32 \
+
+\b0\fs24 If you have code that is needed periodically e.g. for testing or benchmarking, disable it with 
+\f1 #if
+\f0  and add a comment explaining what it is for and why it needs to be kept.\
+\
+}

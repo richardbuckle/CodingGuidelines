@@ -1,0 +1,57 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf390
+{\fonttbl\f0\fswiss\fcharset0 Optima-Regular;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0\b\fs32 \cf0 Use string resources\
+\
+
+\fs28 Guideline:
+\fs32 \
+
+\b0\fs24 All strings visible in the UI should be in string resources, not string literals in code. Use informal structured naming for the key, not the default English text.\
+\
+
+\b\fs28 Bad:
+\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f1\b0\fs24 \cf0 	label.text = @"Congratulations!";\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0 \cf0 \
+
+\b\fs28 Still not ideal:
+\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f1\b0\fs24 \cf0 	label.text = NSLocalizedString(@"Congratulations!", nil);\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0 \cf0 \
+
+\b\fs28 Best:
+\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f1\b0\fs24 \cf0 	label.text = NSLocalizedString(@"labels.text.congratulations", nil);\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0 \cf0 \
+
+\b\fs28 Rationale:
+\fs32 \
+
+\b0\fs24 It is a horrible job to have to go through the entire code base looking for string literals that should be in resources. Always write 
+\f1 NSLocalizedString() 
+\f0 from the get-go.\
+\
+Structured naming for the key makes any omissions stand out, and focuses translators and proof-readers on the text that needs attention.\
+\
+
+\b\fs28 Permitted Exceptions:
+\fs32 \
+
+\b0\fs24 Absolutely none whatsoever. But do remember that this applies only to UI-visible strings, not strings used purely internally as plist keys etc.\
+\
+}
