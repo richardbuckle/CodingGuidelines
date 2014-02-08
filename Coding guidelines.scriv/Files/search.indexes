@@ -5,38 +5,38 @@
             <Title>Contents</Title>
             <Text>Contents
 Compiler and build settings
-Zero warnings and static analyser issues always	&lt;$p>
-Use the standard TODO: comment	&lt;$p>
+Zero warnings and static analyser issues always	&lt;$p&gt;
+Use the standard TODO: comment	&lt;$p&gt;
 Logging and assertions
-DLog not NSLog	&lt;$p>
-Minimise use of logging	&lt;$p>
-No meaningful code in NSAssert	&lt;$p>
-Careful with NSAssert in blocks	&lt;$p>
+DLog not NSLog	&lt;$p&gt;
+Minimise use of logging	&lt;$p&gt;
+No meaningful code in NSAssert	&lt;$p&gt;
+Careful with NSAssert in blocks	&lt;$p&gt;
 Code architecture and design
-Don't repeat yourself	&lt;$p>
-Learn the "SOLID" principles	&lt;$p>
-Be judicious about singletons	&lt;$p>
-Minimise header dependencies	&lt;$p>
+Don't repeat yourself	&lt;$p&gt;
+Learn the "SOLID" principles	&lt;$p&gt;
+Be judicious about singletons	&lt;$p&gt;
+Minimise header dependencies	&lt;$p&gt;
 General best practices
-Use string resources	&lt;$p>
-No magic numbers	&lt;$p>
-Always get the screen size at runtime	&lt;$p>
-Never compare against YES etc	&lt;$p>
-Minimise preprocessor usage	&lt;$p>
-No Hungarian naming	&lt;$p>
-No uninitialised locals, ever	&lt;$p>
+Use string resources	&lt;$p&gt;
+No magic numbers	&lt;$p&gt;
+Always get the screen size at runtime	&lt;$p&gt;
+Never compare against YES etc	&lt;$p&gt;
+Minimise preprocessor usage	&lt;$p&gt;
+No Hungarian naming	&lt;$p&gt;
+No uninitialised locals, ever	&lt;$p&gt;
 Objective-C best practices
-Dot notation is for genuine properties only	&lt;$p>
-Avoid mutable container properties	&lt;$p>
-Beware of retain cycles with blocks and self	&lt;$p>
+Dot notation is for genuine properties only	&lt;$p&gt;
+Avoid mutable container properties	&lt;$p&gt;
+Beware of retain cycles with blocks and self	&lt;$p&gt;
 Version control
-Follow the standard for Git commit messages	&lt;$p>
-Cite ticket numbers in commit messages	&lt;$p>
-Use submodules for 3rd-party code	&lt;$p>
-Don't commit commented-out code	&lt;$p>
-Don't sign your comments	&lt;$p>
+Follow the standard for Git commit messages	&lt;$p&gt;
+Cite ticket numbers in commit messages	&lt;$p&gt;
+Use submodules for 3rd-party code	&lt;$p&gt;
+Don't commit commented-out code	&lt;$p&gt;
+Don't sign your comments	&lt;$p&gt;
 Document History
-History	&lt;$p>
+History	&lt;$p&gt;
 </Text>
         </Document>
         <Document ID="12">
@@ -214,8 +214,8 @@ The usual Objective-C convention of prefixing reusable classes, and class extens
         <Document ID="14">
             <Title>Code architecture and design</Title>
         </Document>
-        <Document ID="7">
-            <Title>Compiler and build settings</Title>
+        <Document ID="40">
+            <Title>Document History</Title>
         </Document>
         <Document ID="23">
             <Title>Don't commit commented-out code</Title>
@@ -232,8 +232,8 @@ If you have code that is needed periodically e.g. for testing or benchmarking, d
 
 </Text>
         </Document>
-        <Document ID="40">
-            <Title>Document History</Title>
+        <Document ID="7">
+            <Title>Compiler and build settings</Title>
         </Document>
         <Document ID="32">
             <Title>No uninitialised locals, ever</Title>
@@ -283,6 +283,12 @@ None.
 
 </Text>
         </Document>
+        <Document ID="41">
+            <Title>History</Title>
+            <Text>Document History
+
+Initial GitHub upload, 2012-08-23.</Text>
+        </Document>
         <Document ID="8">
             <Title>Logging and assertions</Title>
         </Document>
@@ -299,6 +305,19 @@ Don't add redundant cognitive burden to the codebase. If I need to see who wrote
 Permitted Exceptions:
 None.
 
+</Text>
+        </Document>
+        <Document ID="33">
+            <Title>Objective-C best practices</Title>
+        </Document>
+        <Document ID="16">
+            <Title>Learn the "SOLID" principles</Title>
+            <Text>Learn the "SOLID" principles
+
+Guideline:
+Learn and apply the “SOLID” design principles.
+
+That is all.
 </Text>
         </Document>
         <Document ID="9">
@@ -323,25 +342,6 @@ There are a very few cases where we would want to log in release builds. If you 
 For flat-out programmer errors, use ALog() and ZAssert() judiciously.
 
 </Text>
-        </Document>
-        <Document ID="33">
-            <Title>Objective-C best practices</Title>
-        </Document>
-        <Document ID="16">
-            <Title>Learn the "SOLID" principles</Title>
-            <Text>Learn the "SOLID" principles
-
-Guideline:
-Learn and apply the “SOLID” design principles.
-
-That is all.
-</Text>
-        </Document>
-        <Document ID="41">
-            <Title>History</Title>
-            <Text>Document History
-
-Initial GitHub upload, 2012-08-23.</Text>
         </Document>
         <Document ID="25">
             <Title>General best practices</Title>

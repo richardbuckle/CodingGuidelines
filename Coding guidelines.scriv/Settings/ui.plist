@@ -256,8 +256,8 @@
 	<integer>0</integer>
 	<key>inspectorSplitFrames</key>
 	<array>
-		<string>{{0, 0}, {1061, 1056}}</string>
-		<string>{{1062, 0}, {352, 1056}}</string>
+		<string>{{0, 0}, {1068, 1056}}</string>
+		<string>{{1069, 0}, {345, 1056}}</string>
 	</array>
 	<key>inspectorWidth</key>
 	<real>375</real>
@@ -1184,7 +1184,7 @@
 		</array>
 	</dict>
 	<key>mainDocumentEditor.scrollRect</key>
-	<string>{{0, 0}, {595, 841.89001}}</string>
+	<string>{{0, 0}, {595, 842}}</string>
 	<key>mainDocumentEditor.selectedRanges</key>
 	<string>{1083, 0}</string>
 	<key>mainDocumentEditor.textEditorState</key>
